@@ -46,3 +46,16 @@ Contact
 =======
 
 The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
+
+# Setup Airbyte
+https://docs.airbyte.com/using-airbyte/getting-started/oss-quickstart?_gl=1*zn15cq*_gcl_au*MTQ5MTA1NjQ3MC4xNzIxMjM1NDcy
+https://docs.airbyte.com/deploying-airbyte/integrations/authentication
+
+# Setup DBT et Astro Airflow
+https://www.astronomer.io/docs/learn/airflow-dbt/
+https://www.astronomer.io/docs/learn/connections/bigquery/
+https://astronomer.github.io/astronomer-cosmos/profiles/GoogleCloudServiceAccountFile.html
+https://airflow.apache.org/docs/apache-airflow-providers-google/stable/_api/airflow/providers/google/cloud/operators/bigquery/index.html#airflow.providers.google.cloud.operators.bigquery.BigQueryGetDataOperator
+
+# Setup Metabase
+https://www.metabase.com/docs/latest/installation-and-operation/running-metabase-on-docker
