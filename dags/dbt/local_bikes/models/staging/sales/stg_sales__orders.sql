@@ -7,7 +7,7 @@ SELECT
   order_status,
   SAFE_CAST(shipped_date AS DATE) as shipped_date,
   SAFE_CAST(required_date AS DATE) as delivery_target_date,
-  SAFE_CAST(shipped_date AS DATE) - SAFE_CAST(required_date AS DATE) as
+  DATE_DIFF(SAFE_CAST(shipped_date AS DATE) , SAFE_CAST(required_date AS DATE) , DAY) as
 estimated_time_delivery
 FROM
   {{source('sales','_airbyte_orders')}}
