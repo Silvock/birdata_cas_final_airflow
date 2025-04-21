@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: stg_production__products
+    description: This table contains information about products
+    columns:
+      - name: product_id
+        description: This is a unique identifier for the product
+        tests:
+          - unique
+          - not_null
+      - name: brand_id
+        description: This is a  identifier for the brand
+        tests:
+          - relationships:
+              to: ref('stg_production__brands')
+              field: brand_id
+      - name: category_id
+        description: This is a  identifier for the category
+        tests:
+          - relationships:
+              to: ref('stg_production__categories')
+              field: category_id
+      - name: model_year
+        description: This is the date when the product was created
+      - name: product_name
+        description: This is the name of the product
+      - name: catalogue_price
+        description: This is the catalogue unit price of the product
+  - name: stg_production__brands
+    description: This table contains information about brands
+    columns:
+      - name: brand_id
+        description: This is a unique identifier for the brand
+        tests:
+          - unique
+          - not_null
+      - name: brand_name
+        description: This is the brand name
+  - name: stg_production__categories
+    description: This table contains information about categories
+    columns:
+      - name: category_id
+        description: This is a unique identifier for the category
+        tests:
+          - unique
+          - not_null
+      - name: category_name
+        description: This is the category name
+  - name: stg_production__stocks
+    description: This table contains information about items stocks
+    columns:
+      - name: association_id
+        description: This is a unique identifier for the stock
+        tests:
+          - unique
+          - not_null
+      - name: store_id
+        description: This is an identifier for the store
+        tests:
+          - relationships:
+              to: ref('stg_production__stores')
+              field: store_id
+      - name: product_id
+        description: This is an identifier for the product
+        tests:
+          - relationships:
+              to: ref('stg_production__product')
+              field: product_id
+      - name: quantity_in_stock
+        description: This is the quantity of product in a store
