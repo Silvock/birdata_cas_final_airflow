@@ -1,0 +1,144 @@
+version: 2
+
+models:
+  - name: stg_sales__orders
+    description: This table contains information about orders
+    columns:
+      - name: order_id
+        description: This is a unique identifier for the order
+        tests:
+          - unique
+          - not_null
+      - name: staff_id
+        description: This is a  identifier for the employee
+        tests:
+          - relationships:
+              to: ref('stg_sales__staffs')
+              field: staff_id
+      - name: store_id
+        description: This is a  identifier for the store
+        tests:
+          - relationships:
+              to: ref('stg_sales__stores')
+              field: store_id
+      - name: order_status
+        description: This is the order status
+        tests:
+          - accepted_values:
+              values:
+                - '1'
+                - '2'
+                - '3'
+                - '4'
+      - name: order_created_at
+        description: This is the date when the order was created
+      - name: delevery_target_date
+        description: This is the target date of the delivery
+      - name: shipped_date
+        description: This is the date when the order was delivered at
+      - name: estimated_time_delivery
+        description: This is the the estimated time of the delivery
+  - name: stg_sales__customers
+    description: This table contains information about customers
+    columns:
+      - name: customer_id
+        description: This is a unique identifier for the customer
+        tests:
+          - unique
+          - not_null
+      - name: customer_zip_code
+        description: This is a customer zip code
+      - name: customer_email
+        description: This is a customer email
+      - name: customer_phone
+        description: This is a customer phone
+      - name: customer_street
+        description: This is a customer street
+      - name: customer_last_name
+        description: This is a customer last name
+      - name: customer_first_name
+        description: This is a customer first name
+      - name: customer_city
+        description: This is the customer city
+      - name: customer_state
+        description: This is the customer state
+  - name: stg_sales__staffs
+    description: This table contains information about staffs
+    columns:
+      - name: staff_id
+        description: This is a unique identifier for the staff
+        tests:
+          - unique
+          - not_null
+      - name: store_id
+        description: This is a  identifier for the store
+        tests:
+          - relationships:
+              to: ref('stg_sales__stores')
+              field: store_id
+      - name: staff_email
+        description: This is a staff email
+      - name: staff_phone
+        description: This is a staff phone
+      - name: staff_street
+        description: This is a staff street
+      - name: staff_last_name
+        description: This is a staff last name
+      - name: staff_first_name
+        description: This is a staff first name
+      - name: is_active
+        description: check if the employee is active
+      - name: manager_id
+        description: This is the identifier of the manager
+      - name: is_manager
+        description: check if the employee is manager
+  - name: stg_sales__order_items
+    description: This table contains information about order items
+    columns:
+      - name: transaction_id
+        description: This is a unique identifier for the order item
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: This is an identifier for the order
+        tests:
+          - relationships:
+              to: ref('stg_sales__orders')
+              field: order_id
+      - name: product_id
+        description: This is an identifier for the product
+        tests:
+          - relationships:
+              to: ref('stg_sales__products')
+              field: product_id
+      - name: gross_unit_price
+        description: This is the unit price of a product
+      - name: quantity_sold
+        description: This is the item quantity of an order
+      - name: discount
+        description: This is the discount applied to the product
+      - name: total_sale
+        description: This is the total amount of an order calculated by multiplying the price discounted with the quantity.
+  - name: stg_sales__stores
+    description: This table contains information about stores
+    columns:
+      - name: store_id
+        description: This is a unique identifier for the store
+        tests:
+          - unique
+          - not_null
+      - name: store_zip_code
+        description: This is a store zip code
+      - name: store_email
+        description: This is a store email
+      - name: store_phone
+        description: This is a store phone
+      - name: store_street
+        description: This is a store street
+      - name: store_name
+        description: This is a store name
+      - name: store_city
+        description: This is the store city
+      - name: store_state
+        description: This is the store state
