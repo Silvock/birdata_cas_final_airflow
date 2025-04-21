@@ -5,7 +5,7 @@
 name: 'local_bikes'
 version: '1.0.0'
 vars: 
-  myname: 'Test'
+  my_name: 'Test'
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'local_bikes'
