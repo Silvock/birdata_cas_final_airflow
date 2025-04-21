@@ -6,6 +6,6 @@ SELECT
   state     as store_state,
   street    as store_street,
   zip_code  as store_zip_code,
-  store_name as store_store_name
+  store_name as store_name
 FROM
   {{source('sales','_airbyte_stores')}}
