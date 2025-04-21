@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: sales
+    schema: airbyte_local_bikes
+    tables:
+      - name: _airbyte_customers
+      - name: _airbyte_staffs
+      - name: _airbyte_orders
+      - name: _airbyte_stores
+      - name: _airbyte_order_items
+  - name: production
+    schema: airbyte_local_bikes
+    tables:
+      - name: _airbyte_categories
+      - name: _airbyte_products
+      - name: _airbyte_stocks
+      - name: _airbyte_brands
