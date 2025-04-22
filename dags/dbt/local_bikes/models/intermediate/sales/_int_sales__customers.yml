@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: int_sales__customers
+    description: '{{ doc("table_customers") }}'
+
+    columns:
+      - name: customer_id
+        description: This is an identifier for the customer 
+      - name: customer_city
+        description: This is the city who live the customer
+      - name: customer_state
+        description: This is the state who live the customer
+      - name: total_amount_spent
+        description: This is the total amount spent by the customer
+      - name: total_items
+        description: This is the total items ordered by the customer
+      - name: total_distinct_items
+        description: This is the total distinct items ordered by the customer
+      - name: total_orders
+        description: This is the total orders made by the customer
+      - name: favorite_product_id
+        description: This is the favorite item of the customer

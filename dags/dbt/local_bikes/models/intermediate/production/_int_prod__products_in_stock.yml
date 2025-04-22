@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: int_prod__products_in_stock
+    description: '{{ doc("table_products_in_stock") }}'
+
+    columns:
+      - name: product_id
+        description: This is an identifier for the product 
+      - name: brand_name
+        description: This is the name of the brand of the product
+      - name: catalogue_price
+        description: This is the unit catalogue price of the product
+      - name: model_year
+        description: This is the year of the model of the product
+      - name: category_name
+        description: This is the category of the product
+      - name: product_name
+        description: This is the name of the product
