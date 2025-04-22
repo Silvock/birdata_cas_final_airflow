@@ -13,7 +13,8 @@ SELECT
   catalogue_price,
   model_year,
   cat.category_name
-  product_name
+  product_name,
+  stock_of_product
 FROM
   {{ ref('stg_production__products' )}} p 
 LEFT JOIN {{ ref('stg_production__brands' )}} br 

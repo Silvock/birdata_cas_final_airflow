@@ -17,3 +17,5 @@ models:
         description: This is the category of the product
       - name: product_name
         description: This is the name of the product
+      - name: stock_of_product
+        description: This is the quantity  of the product in stock

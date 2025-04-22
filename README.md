@@ -48,14 +48,72 @@ Contact
 The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
 
 # Setup Airbyte
+
+Make sure Docker is running
+
+## Install abctl cli
+
+`curl -LsfS https://get.airbyte.com | bash -`
+
+## Run Airbyte in a container
+
+`abctl local install`
+
+## Additional links
+
 https://docs.airbyte.com/using-airbyte/getting-started/oss-quickstart?_gl=1*zn15cq*_gcl_au*MTQ5MTA1NjQ3MC4xNzIxMjM1NDcy
 https://docs.airbyte.com/deploying-airbyte/integrations/authentication
 
 # Setup DBT et Astro Airflow
+
+## Install Astronomer cli and create an astro project
+
+`curl -sSL install.astronomer.io | sudo bash -s`
+
+`mkdir name_your_project`
+
+`astro dev init`
+
+## Configure your project
+
+In the docker file add :
+
+`# replace dbt-postgres with another supported adapter if you're using a different warehouse type
+RUN python -m venv dbt_venv && source dbt_venv/bin/activate && \
+    pip install --no-cache-dir dbt-postgres && deactivate`
+
+replace dbt-postgres by your dbt adapter
+
+In the requirements file add this package:
+
+`astronomer-cosmos
+apache-airflow-providers-postgres==5.6.0`
+
+Adapt the last package providers by your database
+
+## Additionnal links
+
 https://www.astronomer.io/docs/learn/airflow-dbt/
 https://www.astronomer.io/docs/learn/connections/bigquery/
 https://astronomer.github.io/astronomer-cosmos/profiles/GoogleCloudServiceAccountFile.html
 https://airflow.apache.org/docs/apache-airflow-providers-google/stable/_api/airflow/providers/google/cloud/operators/bigquery/index.html#airflow.providers.google.cloud.operators.bigquery.BigQueryGetDataOperator
 
 # Setup Metabase
+
+## Pull image 
+
+`docker pull metabase/metabase:latest`
+
+## Run container
+
+`docker run -d -p 3000:3000 --name metabase metabase/metabase`
+
+## Additional links
 https://www.metabase.com/docs/latest/installation-and-operation/running-metabase-on-docker
+
+# Generate dbt docs server
+
+dbt docs serve --port 2223
+
+Because default port 8080 is used by airflow
+Documentation is available in Bigquery also
