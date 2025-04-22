@@ -2,6 +2,10 @@
 
 ./dags/dbt/local_bikes
 
+# Dashboard Screenshot
+
+./dash_screenshot
+
 # Setup Airbyte
 
 Make sure Docker is running
