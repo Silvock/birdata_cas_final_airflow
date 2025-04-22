@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: int_sales__orders
+    description: '{{ doc("table_orders") }}'
+
+    columns:
+      - name: customer_id
+        description: This is an identifier for the customer 
+      - name: customer_city
+        description: This is the city who live the customer
+      - name: customer_state
+        description: This is the state who live the customer
+      - name: total_order_amount
+        description: This is the total amount spent by the customer
+      - name: total_items
+        description: This is the total items ordered by the customer
+      - name: total_distinct_items
+        description: This is the total distinct items ordered by the customer
+      - name: shipped_date
+        description: This is the date of the delivery
+      - name: avg_estimated_time_delivery
+        description: This is the time spent between the delivery and the order
+      - name: order_created_at
+        description: This is the date of the creation of the order
+      - name: order_status
+        description: This is the status of the order
+      - name: store_id
+        description: This is an identifier of the store
+      - name: staff_id
+        description: This is an identifier of the employee
+      - name: order_id
+        description: This is an identifier of the order

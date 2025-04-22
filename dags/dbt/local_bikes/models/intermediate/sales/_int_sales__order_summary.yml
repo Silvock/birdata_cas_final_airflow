@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: int_sales__order_items
+    description: '{{ doc("table_order_items") }}'
+
+    columns:
+      - name: customer_id
+        description: This is an identifier for the customer 
+      - name: quantity_sold
+        description: This is the quantity of product sold related to an order
+      - name: total_sale
+        description: This is the total amount spent by the customer
+      - name: shipped_date
+        description: This is the date of the delivery
+      - name: estimated_time_delivery
+        description: This is the time spent between the delivery and the order
+      - name: order_created_at
+        description: This is the date of the creation of the order
+      - name: order_status
+        description: This is the status of the order
+      - name: store_id
+        description: This is an identifier of the store
+      - name: staff_id
+        description: This is an identifier of the employee
+      - name: order_id
+        description: This is an identifier of the order

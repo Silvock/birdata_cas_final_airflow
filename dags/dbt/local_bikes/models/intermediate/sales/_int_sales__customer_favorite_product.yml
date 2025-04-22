@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: int_sales__customer_favorite_product
+    description: '{{ doc("table_favorite_product") }}'
+
+    columns:
+      - name: customer_id
+        description: This is an identifier for the customer 
+      - name: favorite_product_id
+        description: This is an identifier of the favorite product of the customer
+      - name: customer_state
+        description: This is the name of the favorite product
