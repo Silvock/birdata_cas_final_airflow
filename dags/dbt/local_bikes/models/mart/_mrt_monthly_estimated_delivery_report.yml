@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: mrt_monthly_estimated_delivery_report
+    description: '{{ doc("mrt_monthly_estimated_delivery_report") }}'
+  
+    columns:
+      - name: store_id
+        description: This is an identifier of the store
+      - name: store_name
+        description: This is the name of the store
+      - name: store_avg_estimated_time_delivery
+        description: This is the average of the estimated time delivery by store
+      - name: month_order
+        description: This is the month of orders

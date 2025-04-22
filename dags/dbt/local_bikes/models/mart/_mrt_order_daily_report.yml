@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: mrt_daily_order_report
+    description: '{{ doc("mrt_order_daily_report") }}'
+  
+    columns:
+      - name: reporting_date
+        description: This is the date of the report
+      - name: staff_last_name
+        description: This is the last name of the employee
+      - name: staff_first_name
+        description: This is the first name of the employee
+      - name: total_orders
+        description: This is the total of orders
+      - name: total_daily_users
+        description: This is the total of customers
+      - name: total_daily_users_from_california
+        description: This is the total of customers of the store in california

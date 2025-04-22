@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: mrt_monthly_stock_delivery_report
+    description: '{{ doc("mrt_monthly_stock_delivery_report") }}'
+
+    columns:
+      - name: brand_name
+        description: This is the name of the brand of the product
+      - name: product_name
+        description: This is the name of the product
+      - name: stock_of_product
+        description: This is the last evaluated stock
+      - name: total_product_qty_sold
+        description: This is the last evaluated stock
+      - name: month_order
+        description: This is the month of orders
